@@ -1,0 +1,30 @@
+{
+	"rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
+	"extends": "tslint:recommended",
+	"rules": {
+		"no-console": [
+			false
+		],
+		"no-unused-expression": true,
+		"no-duplicate-variable": true,
+		"no-unused-variable": true,
+		"curly": true,
+		"class-name": true,
+		"semicolon": ["always"],
+		"triple-equals": true,
+		"quotemark": [
+			"single"
+		],
+		"indent": [
+			true, "tabs"
+		]
+	},
+	"jsRules": {
+		"quotemark": [
+			"single"
+		],
+		"indent": [
+			true, "tabs"
+		]
+	}
+}

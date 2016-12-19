@@ -1,16 +1,17 @@
-import * as path from 'path';
+import * as bodyParser from 'body-parser';
 import * as express from 'express';
 import * as logger from 'morgan';
-import * as bodyParser from 'body-parser';
+import * as path from 'path';
+
 import HeroRouter from './routes/hero-router';
 
 // Creates and configures an ExpressJS web server.
-class App {
+class Server {
 
 	// ref to Express instance
 	public express: express.Application;
 
-	//Run configuration methods on the Express instance.
+	// Run configuration methods on the Express instance.
 	constructor() {
 		this.express = express();
 		this.middleware();
@@ -31,18 +32,18 @@ class App {
 		 * API endpoints */
 		let router = express.Router();
 		// placeholder route handler
-		// router.get('/', (req, res, next) => {
-		// 	res.json({
-		// 		message: 'Hello World!'
-		// 	});
-		// });
+		router.get('/test', (req, res, next) => {
+			res.json({
+				message: 'Hello World!'
+			});
+		});
 		let publicPath = path.join(__dirname, 'public');
 		console.log(`Serving static files from ${publicPath}`);
 		this.express.use(express.static(publicPath));
-		// this.express.use('/', router);
+		this.express.use('/test', router);
 		this.express.use('/api/v1/heroes', HeroRouter);
 	}
 
 }
 
-export default new App().express;
+export default new Server().express;
