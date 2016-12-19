@@ -1,5 +1,7 @@
 {
-	"rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
+	"rulesDirectory": [
+		"node_modules/tslint-eslint-rules/dist/rules"
+	],
 	"extends": "tslint:recommended",
 	"rules": {
 		"no-console": [
@@ -10,13 +12,19 @@
 		"no-unused-variable": true,
 		"curly": true,
 		"class-name": true,
-		"semicolon": ["always"],
+		"semicolon": [
+			"always"
+		],
+		"trailing-comma": [
+			false
+		],
 		"triple-equals": true,
 		"quotemark": [
 			"single"
 		],
 		"indent": [
-			true, "tabs"
+			true,
+			"tabs"
 		]
 	},
 	"jsRules": {
@@ -24,7 +32,8 @@
 			"single"
 		],
 		"indent": [
-			true, "tabs"
+			true,
+			"tabs"
 		]
 	}
 }

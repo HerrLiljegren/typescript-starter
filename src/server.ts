@@ -32,18 +32,18 @@ class Server {
 		 * API endpoints */
 		let router = express.Router();
 		// placeholder route handler
-		router.get('/test', (req, res, next) => {
-			res.json({
+		router.get('/', (req, res, next) => {
+			return res.json({
 				message: 'Hello World!'
 			});
 		});
 		let publicPath = path.join(__dirname, 'public');
 		console.log(`Serving static files from ${publicPath}`);
-		this.express.use(express.static(publicPath));
+
 		this.express.use('/test', router);
 		this.express.use('/api/v1/heroes', HeroRouter);
+		this.express.use(express.static(publicPath));
 	}
-
 }
 
 export default new Server().express;
