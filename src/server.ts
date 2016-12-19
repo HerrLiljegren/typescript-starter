@@ -34,7 +34,7 @@ class Server {
 		// placeholder route handler
 		router.get('/', (req, res, next) => {
 			return res.json({
-				message: 'Hello World!'
+				message: 'Hello World!22'
 			});
 		});
 		let publicPath = path.join(__dirname, 'public');

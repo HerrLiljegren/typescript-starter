@@ -10,7 +10,8 @@ gulp.task('default', ['server:start']);
 gulp.task('server:start', ['build'], function () {
 	nodemon({
 		env: { 'NODE_ENV': 'development' },
-		ext: 'ts',
+		ext: 'ts html',
+		ignore: ['dist/', 'node_modules/'],
 		script: 'dist/index.js',
 		tasks: ['build'],
 	});
